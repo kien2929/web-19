@@ -1,5 +1,5 @@
 ## Practice 1 - Searching within an Array
-
+//Viết 1 hàm tìm kiếm chấp nhận 2 tham sô input và output
 Write a function `search` that accept 2 parameters `input` and `target`:
 
 ```javascript
@@ -17,8 +17,11 @@ The data parameter will accept objects in the form of:
      * A sorted array containing unique integer numbers ranging from -10000 to 10000.
      * The array is sorted by ascending order, and number is distributed uniformly.
      */
+    //Một mảng được sắp xếp chứa các số nguyên duy nhất từ ​​-10000 đến 10000.
+    // Mảng được sắp xếp theo thứ tự tăng dần và số lượng được phân phối đồng đều.
   ],
   "target" : // a number to search for within the array.
+  //1 số để tìm kiếm trong mảng
 }
 ```
 
