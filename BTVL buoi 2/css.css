@@ -1,0 +1,29 @@
+
+.menu_vertical>span{
+    display: inline-block;
+}
+span{
+    border-top-width: 10px 20px;
+    padding-top:10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 2px;
+    background-color: #D5B0AC;
+    width: 70px;
+    text-align: center;
+}
+span:hover{
+    color: white;
+    background-color: greenyellow;
+}
+span{
+    display: block;
+}
+p{
+    padding-top:10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
