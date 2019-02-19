@@ -5,7 +5,7 @@
 }
 .page{
     /* width: 1020px; */
-    background-color:#edf0f7;
+    margin-left: 150px;
 }
 .doc1{
     margin-top:0px;
@@ -51,6 +51,15 @@
 .n_pic{
     width: 700px;
 }
+.mid{
+    background-color: antiquewhite;
+    width:1020px; 
+    padding-bottom: 20px;
+}
+.pic>p{
+    padding-top: 40px;
+    
+}
 .pic{
     text-align: center;
     display: inline-block;
@@ -59,12 +68,14 @@
     margin-top: 15px;
     margin-left: 20px;
     color: white; text-shadow: black 0.1em 0.1em 0.2em;
-    font-size: 25px;
-    background-size:330px 150px;
+    font-size: 30px;
+    /* background-size:330px 150px; */
+    background-position: center center;
+    background-size: cover;
     float: left; 
 }
-.o_pic p{
-    top: 150px;
+.o_pic>.p1{
+    padding-top: 70px;
 }
 .o_pic{
     text-align: center;
@@ -74,9 +85,10 @@
     width: 315px;
     height: 315px;
     color: white; text-shadow: black 0.1em 0.1em 0.2em;
-    font-size: 25px;
+    font-size: 30px;
     background-image:url("https://www.topuniversities.com/sites/default/files/articles/lead-images/tokyo_best_student_cities.jpg");
-    background-size: 330px 315px;
+    background-position: center center;
+    background-size: cover;
 }
 .mex{
     background-image: url("http://media.kinhtedothi.vn//2018/12/22/meei.jpg")
