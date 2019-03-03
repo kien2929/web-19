@@ -1,0 +1,13 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    padding: 50px 100px;
+}
+
+.input{
+
+    width: 100%;
+}

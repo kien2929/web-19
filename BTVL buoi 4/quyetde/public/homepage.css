@@ -1,0 +1,26 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+#question {
+  padding: 100px 0px;
+  text-align: center;
+  height: 200px;
+}
+#yes {
+  display: inline-block;
+
+  margin-left: 550px;
+  width: 50px;
+  text-align: center;
+}
+p{
+  display: inline-block;
+}
+#no {
+  display: inline-block;
+  margin-left: 100px;
+  width: 50px;
+  text-align: center;
+}
