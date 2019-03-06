@@ -15,13 +15,13 @@ server.get("/", (req, res) => {
     .sendFile(path.resolve(__dirname + "/public/homepage.html"));
 });
 
-server.get("get-radom-question",(req, res)=>{
+server.get("/get-random-question",(req, res)=>{
   const question=RandomQuestion();
   res.status(200).json(question);
 });
 
 function RandomQuestion(){
-  const arraydata = JSON.parse(fs.readFileSync("/data.json", "utf8"));
+  const arraydata = JSON.parse(fs.readFileSync("data.json", "utf8"));
   const index = Math.floor(Math.random() * arraydata.length);
   return arraydata[index];
 }
