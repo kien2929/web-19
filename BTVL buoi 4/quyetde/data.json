@@ -27,5 +27,26 @@
     "no": 0,
     "createdAt": "3/6/2019, 2:50:47 PM"
   },
-  { "id": 4, "yes": 0, "no": 0, "createdAt": "3/6/2019, 4:35:42 PM" }
+  { "id": 4, "yes": 0, "no": 0, "createdAt": "3/6/2019, 4:35:42 PM" },
+  {
+    "id": 5,
+    "content": "aaaa",
+    "yes": 0,
+    "no": 0,
+    "createdAt": "3/6/2019, 7:16:21 PM"
+  },
+  {
+    "id": 6,
+    "content": "aaaa",
+    "yes": 0,
+    "no": 0,
+    "createdAt": "3/6/2019, 7:16:51 PM"
+  },
+  {
+    "id": 7,
+    "content": "nhà có chị gái ko ?",
+    "yes": 0,
+    "no": 0,
+    "createdAt": "3/6/2019, 7:17:04 PM"
+  }
 ]
