@@ -2,22 +2,22 @@
   {
     "id": 0,
     "content": "bạn bị mọc sừng chưa ?",
-    "yes": 4,
-    "no": 1,
+    "yes": 5,
+    "no": 2,
     "createdAt": "3/2/2019, 10:06:04 PM"
   },
   {
     "id": 1,
     "content": "nhà có chó không ?",
-    "yes": 1,
+    "yes": 3,
     "no": 1,
     "createdAt": "3/3/2019, 5:57:38 PM"
   },
   {
     "id": 2,
     "content": "nhà bán gà không ?",
-    "yes": 1,
-    "no": 1,
+    "yes": 5,
+    "no": 2,
     "createdAt": "3/3/2019, 5:57:48 PM"
   }
 ]
