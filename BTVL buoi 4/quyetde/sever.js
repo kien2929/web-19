@@ -8,87 +8,45 @@ server.use(express.static("public")); //thư mục public người dùng xem fre
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
 
-
 server.get("/", (req, res) => {
-  res
-    .status(200)
-    .sendFile(path.resolve(__dirname + "/public/homepage.html"));
+  res.status(200).sendFile(path.resolve(__dirname + "/public/homepage.html"));
 });
 
-server.get("/get-random-question",(req, res)=>{
-  const question=RandomQuestion();
+server.get("/get-random-question", (req, res) => {
+  const question = RandomQuestion();
   res.status(200).json(question);
 });
 
-function RandomQuestion(){
+function RandomQuestion() {
   const arraydata = JSON.parse(fs.readFileSync("data.json", "utf8"));
   const index = Math.floor(Math.random() * arraydata.length);
   return arraydata[index];
 }
-// server.get("/", (req, res) => {
-//   fs.readFile("./data.json", (err, data) => {
-//     if (err) res.status(500).send("err");
-//     const question = JSON.parse(data);
-//     const randomIndex = Math.floor(Math.random() * question.length);
-//     const randomQuestion = question[randomIndex];
-
-//     res.status(200).send(`
-//     <!DOCTYPE html>
-// <html lang="en">
-// <head>
-//     <meta charset="UTF-8">
-//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-//     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-//     <title>Buổi 4</title>
-// </head>
-// <body>
-//     <h2>${randomQuestion.content}</h2>
-//     <div>
-//     <form name='yes' method='get' action='/vote/${randomQuestion.id}/yes'>
-//     <input type='submit' value='yes'>
-//     </input>
-//     </form>
-//     <form name='no' method='get' action='/vote/${randomQuestion.id}/no'>
-//     <input type='submit' value='no'>
-
-//     </input>
-//     </form>
-//     </div>
-//     <div>
-//     <button id='result'>Result</button>
-//     <button id='other'>Other question</button>
-//     </div>
-//     <script src='./public/index.js'>
-//     </script>
-// </body>
-// </html>
-//     `);
-//   });
-// });
-
-
-server.get("/vote/:questionId/:vote", async (req, res) => {
-  const { questionId, vote } = req.params;
-
-  console.log(questionId.vote);
+server.get("/get-vote", (req, res) => {
+  console.log(req.query);
+  const questionId = req.query.questionId;
+  const vote = req.query.vote;
+  let questions;
 
   fs.readFile("./data.json", (err, data) => {
     if (err) {
-      res.status(500).send("Internal sever error");
+      res.status(500).send("Internet server error!");
     }
-    const questions = JSON.parse(data);
-    for (let item of questions) {
-      if (item.id === Number(questionId)) {
-        vote === "yes" ? (item.yes += 1) : (item.no += 1);
-        break;
-      }
+
+    questions = JSON.parse(data);
+    if (vote == "yes") {
+      questions[Number(questionId)].yes += 1;
+    } else questions[Number(questionId)].no += 1;
+
+    if (questions) {
+      fs.writeFile("./data.json", JSON.stringify(questions), (err, data) => {
+        if (err) {
+          res.status(500).send("Internet server error!");
+        }
+        res.status(200).json(questions);
+      });
     }
-    fs.writeFile("./data.json", JSON.stringify(questions), (err, data) => {
-      if (err) {
-        res.status(500).send("err");
-      }
-      res.status(200).send("update success");
-    });
+    res.status(200).json(questions[Number(questionId) - 1]);
   });
 });
 
@@ -102,8 +60,8 @@ server.get("/get-question-by-id", (req, res) => {
     const questions = JSON.parse(data);
     let selecQuestion;
     for (let item of questions) {
-      if(item.id===Number(questionId)){
-        selecQuestion=item;
+      if (item.id === Number(questionId)) {
+        selecQuestion = item;
         break;
       }
     }
@@ -129,26 +87,28 @@ server.get("/create-question", (req, res) => {
     .sendFile(path.resolve(__dirname + "/public/create-question.html"));
 });
 
-server.post("/create-question", (req, res) => {
+server.get("/get-create", (req, res) => {
   fs.readFile("./data.json", (err, data) => {
     if (err) {
       res.status(500).send("Internal sever error");
     }
-    const questions = JSON.parse(data);
-    console.log(typeof questions);
-    questions.push({
-      id: questions.length,
-      content: req.body.content,
-      yes: 0,
-      no: 0,
-      createdAt: new Date().toLocaleString()
-    });
-    fs.writeFile("./data.json", JSON.stringify(questions), (err) => {
-      if (err) {
-        res.status(500).send("Internal sever error");
-      }
-      res.status(201).end("Success");
-    });
+    if (req.query.content) {
+      const questions = JSON.parse(data);
+      console.log(typeof questions);
+      questions.push({
+        id: questions.length,
+        content: req.query.content,
+        yes: 0,
+        no: 0,
+        createdAt: new Date().toLocaleString()
+      });
+      fs.writeFile("./data.json", JSON.stringify(questions), (err) => {
+        if (err) {
+          res.status(500).send("Internal sever error");
+        }
+        res.status(201).end("Success");
+      });
+    }
   });
 });
 
