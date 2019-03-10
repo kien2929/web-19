@@ -10,9 +10,10 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
+    "mongoose": "^5.4.17",
     "nodemon": "^1.18.10",
     "random-int": "^1.0.0"
   }
