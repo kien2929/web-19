@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./create-question.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Tạo câu hỏi</title>
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="">Quyết đê</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="/create-question">Hỏi nhanh<span class="sr-only">(current)</span></a>
+                    </li><li class="nav-item active">
+                        <a class="nav-link" href="/">Đáp gọn<span class="sr-only">(current)</span></a>
+                      </li>
+                  </ul>
+                  <!-- <span class="navbar-text">
+                    Navbar text with an inline element
+                  </span> -->
+                </div>
+              </nav>
+    <div class="container">
+            <h2 class="text-center">Hãy hỏi cộng đồng một câu gì đó (đúng/có) hoặc (sai/không) ?</h2>
+            <div id="error-mess" >&nbsp</div>
+            <form id="create-form">
+                <textarea class="input form-control" name="content" id="content" cols="50" rows="6"></textarea>
+                <div id="remain-character">200 charaters left</div>
+                <input class="btn btn-secondary" type="submit" value="Gửi"/>
+                <div id="success-mess" ></div>
+            </form>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./create-question.js"></script>
+</body>
+</html>
