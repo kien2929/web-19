@@ -16,7 +16,7 @@ window.onload = () => {
     if (!questionContent) {
       document.getElementById("error-mess").innerText = "Please input!";
     } else {
-      document.getElementById("error-mess").innerText = "";
+      document.getElementById("error-mess").innerText = " "
       document.getElementById("success-mess").innerText = "Send success!";
       $.ajax({
         url: "/create-question",

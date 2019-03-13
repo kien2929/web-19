@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Youtube search</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="./main.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <img src="data:image/png;base64,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" alt="">
+                <h1>Let's search!</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <form id="search">
+                    <div class="form-group">
+                        <input type="text" name="keyword" id="keyword" class="form-control" required>
+                        <br>
+                        <input type="submit" class="btn btn-primary form-control" value="Submit"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" id="result-list">
+                
+            </div>
+        </div>
+        <div class="col-md-12" id="result-list"></div>
+        
+    </div>
+</body>
+</html>
