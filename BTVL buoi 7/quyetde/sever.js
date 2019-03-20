@@ -2,8 +2,6 @@ const express = require("express");
 const path = require("path");
 const server = express();
 const bodyParser = require("body-parser");
-const fs = require("fs");
-const randomInt = require("random-int");
 const mongoose = require("mongoose");
 const questionModel = require("./model"); // Model trong MongoDB
 
