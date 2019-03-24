@@ -19,16 +19,16 @@ function setround(){
     </div>
         `
         $('#round').append(itemLink);
-        temp+=1;
+    
 }
 
 function getscoreoneround(){
-    const score1 = document.getElementById(`socrePlayer1Round${temp-2}`).value;
-    const score2 = document.getElementById(`socrePlayer2Round${temp-2}`).value;
-    const score3 = document.getElementById(`socrePlayer3Round${temp-2}`).value;
-    const score4 = document.getElementById(`socrePlayer4Round${temp-2}`).value;
+    const score1 = document.getElementById(`socrePlayer1Round${temp-1}`).value;
+    const score2 = document.getElementById(`socrePlayer2Round${temp-1}`).value;
+    const score3 = document.getElementById(`socrePlayer3Round${temp-1}`).value;
+    const score4 = document.getElementById(`socrePlayer4Round${temp-1}`).value;
     $.ajax({
-        url : `/savescore?score1=${score1}&score2=${score2}&score3=${score3}&score4=${score4}&round=${temp-2}`,
+        url : `/savescore?score1=${score1}&score2=${score2}&score3=${score3}&score4=${score4}&round=${temp-1}`,
         type : 'GET',
         success : (data)=>{
             console.log('success');
@@ -55,7 +55,6 @@ function gettotalscore(){
 window.onload = ()=>{
 
     setround();
-    gettotalscore();
     $.ajax({
         url : '/startgame',
         type: 'GET',
@@ -69,6 +68,7 @@ window.onload = ()=>{
     });
 
     document.getElementById('addround').addEventListener('click', () => {
+        temp+=1;
         setround();
         getscoreoneround();
         gettotalscore();
