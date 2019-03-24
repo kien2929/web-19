@@ -1,0 +1,40 @@
+html,body{
+    width : 100%;
+    height: 100%;
+    font-size: 28px;
+    color :#333333;
+    background-color: #FBFEF9;
+    
+}
+
+hr{
+    margin-top: 0px;
+    border-top: 2px solid rgba(62,44,100,0.6);
+    width: 95%;
+    margin-bottom: 2rem;
+}
+
+input ,button{
+    border: 2px solid rgb(228, 140, 140) !important;
+}
+button{
+    color : #FBFEF9 !important;
+    background-color: rgb(233, 75, 75) !important;
+}
+@media (max-width: 992px){
+    h1{
+        font-size: 100% !important
+    }
+}
+
+@media (max-width: 768px){
+    h1{
+        font-size: 95% !important
+    }
+}
+
+@media (max-width: 567px){
+    h1{
+        font-size: 85% !important
+    }
+}
