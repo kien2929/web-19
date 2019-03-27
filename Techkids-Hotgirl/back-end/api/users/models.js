@@ -8,15 +8,8 @@
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
-    email : {
-        type : String,
-        required : true,
-        unique : true
-    },
-    password : {
-        type : String,
-        required : true
-    },
+    email :String,
+    password : String,
     fbId : String,
     firstName : String,
     lastName : String,
@@ -26,5 +19,5 @@ const UserSchema = new mongoose.Schema({
         default : Date.now
     }
 });
-const UserModal = mongoose.model('usermodels',UserSchema);
+const UserModal = mongoose.model('User',UserSchema);
 module.exports = UserModal;

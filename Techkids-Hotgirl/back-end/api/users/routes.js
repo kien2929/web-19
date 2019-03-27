@@ -2,7 +2,7 @@ const express = require('express');
 const UserRoutes = express();
 const UserModel = require('./models')
 
-userRoutes.post('/',(req,res)=>{
+UserRoutes.post('/', async(req,res)=>{
     try{
         const existEmail= await UserModel.findOne({
             email:req.body.email,
