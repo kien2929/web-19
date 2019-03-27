@@ -12,14 +12,23 @@ mongoose.connect('mongodb://localhost:27017/mnhack', (err) =>{
 
 const server = express();
 server.use(express.static('public'));
-server.use(express.static('playgame'));
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
-server
 
-server.get('/home', (req,res) => {
+server.get('/', (req,res) => {
     res.status(200).sendFile(path.resolve(__dirname, './public/home.html'));
 });
+
+server.get('/games/:gameId',(req,res)=>{
+    res.status(200).sendFile(path.resolve(__dirname, './public/game.html'));
+})
+server.post('/api/game',(rep,res)=>{
+    try {
+        
+    } catch (error) {
+
+    }
+})
 
 server.get('/create', async(req,res)=>{
     _game =await playerModel.count();

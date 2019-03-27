@@ -14,12 +14,13 @@ window.onload = () =>{
             url: `/create?player1=${name1.value}&player2=${name2.value}&player3=${name3.value}&player4=${name4.value}`,
             type: 'GET',
             success: (data)=>{
+                window.location.href = `/games/${data.id}`;
             },
             error: (error)=> {
                 throw error;
             }
         });
-        window.location.href = '/playgame';
+        
 
     })
 }
