@@ -5,9 +5,20 @@ const postRouter = express();
 
 postRouter.post('/',async(req,res)=>{
     try {
-        const postInfo=req.body;
-        const newPost= await PostModel.create(postInfo);
-        res.status(201).json(newPost);
+        if(!req.session.user){
+            res.status(403).json({
+                message:'chua d ang nhap',
+            })
+        }
+        if(req.session.user&&req.session.user.permissions.indexOf('POST.CREATE') >-1){
+            const postInfo=req.body;
+            const newPost= await PostModel.create(postInfo);
+            res.status(201).json(newPost);
+        } else{
+            res.status(403).json({
+                message:'dang nhap roi nhung ko co quyen',
+            })
+        }
     } catch (error) {
         res.status(500).end(error.message);
     }

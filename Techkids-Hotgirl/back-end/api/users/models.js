@@ -17,7 +17,8 @@ const UserSchema = new mongoose.Schema({
     createAt : {
         type : Date,
         default : Date.now
-    }
+    },
+    permissions:[String]
 });
 const UserModal = mongoose.model('User',UserSchema);
 module.exports = UserModal;
