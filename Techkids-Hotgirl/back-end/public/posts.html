@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>TKHG Sign in</title>
+    <title>TKHG Posts</title>
 
     <!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/"> -->
 
@@ -12,27 +12,28 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="./css/sign-in.css">
-    <script src="./js/sign-in.js"></script>
+
+    <link rel="stylesheet" href="./css/posts.css">
+    <script src="./js/posts.js"></script>
   </head>
 
   <body class="text-center">
-    <form class="form-signin">
+    <form class="form-group">
       <img class="mb-4" src="https://techkids.edu.vn/images/logo.png" alt="" width="200" >
-      <h1 class="h3 mb-3 font-weight-normal">Sign in</h1>
-      <div class="form-group">
-          <label for="inputEmail" class="sr-only">Email address</label>
-          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-      </div>
-      <div class="form-group">
-          <label for="inputPassword" class="sr-only">Password</label>
-          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-          <p class="nof-pwd"></p>
-      </div>
-      <button class="btn btn-lg btn-primary btn-block" type="submit" id="submit">Sign in</button>
-      <a href="/register">Register</a>
-      <p class="mt-5 mb-3 text-muted">&copy;facebook.com/kien2929</p>
+      <p class="mb-4 font-weight-normal">Title</p>
+      <label for="title" class=" sr-only">Title</label>
+      <input type="text" id="title" class="form-control" placeholder="" required autofocus>
+      <p class="mb-4 font-weight-normal">Content</p>
+      <label for="content" class="sr-only">Content</label>
+      <textarea type="text" id="content" class="form-control" required rows="4"></textarea>
+      <p class="mb-4 font-weight-normal">Decription</p>
+      <label for="decription" class="sr-only">Decription</label>
+      <textarea type="text" id="decription" class="form-control"  required rows="3"></textarea>
+      <div class="row"><p class="col-5"></p>
+        <button class="col-2 btn btn-lg btn-primary btn-block" type="submit">Post</button>
+        <p class="col-5"></p>
+    </div>
+      
     </form>
   </body>
 </html>

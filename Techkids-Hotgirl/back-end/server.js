@@ -37,7 +37,7 @@ app.get('/register',(req,res)=>{
 
 //create-post
 app.get('/posts',(req,res)=>{
-    res.status(200).sendFile(path.resolve(__dirname + '/create-posts/index.html'));
+    res.status(200).sendFile(path.resolve(__dirname + '/public/posts.html'));
 });
 // start server
     app.listen(3000,(err)=>{
